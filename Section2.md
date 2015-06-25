@@ -199,15 +199,27 @@ Wordpressをwgetで落としてきて、解凍を行い、
 	
 ## 2-3 Wordpressを動かす(3)
 
-1-2や2-2では提供されているrpmファイルを使用してLAMP/Nginx + PHPの環境を構築しましたが、
-提供されていないバージョンを使用して環境を構築する必要がある時もあります。
+###apache2.2のインストール
 
-そういう場合はソースコードをダウンロードしてきて自分でコンパイルして動作させます。
+ソースをダウンロード
 
-Apache HTTP Server 2.2とPHP5.5の環境を構築し、Wordpressを動かしてください。
-(MySQL/MariaDBはrpm版を使ってもOKです)
+	wget http://ftp.riken.jp/net/apache//httpd/httpd-2.2.29.tar.gz
 
-その時は別のVagrantfile(作業ディレクトリ)を作ってやってくださいね。
+展開
+
+	gizp -d httpd-NN.tar.gz
+
+	tar xvf httpd-NN.tar
+
+展開されたディレクトリに移動して
+
+	./configure
+
+	make
+
+	make install
+
+###php5.5のインストール
 
 ## 2-4 ベンチマークを取る
 
