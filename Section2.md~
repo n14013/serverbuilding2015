@@ -116,9 +116,7 @@ default.confを編集する。
 	root /usr/share/nginx/html;
 	index index.html index.htm;
 	}
-
 にindex.phpを追記
-
 	location / {
 	root /usr/share/nginx/html;
 	index index.php index.html index.htm;
@@ -131,9 +129,7 @@ default.confを編集する。
 	fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name;
 	include fastcgi_params;
 	}
-
 [/scripts$fastcgi_script_name;]を[ $document_root$fastcgi_script_name;]に変更、[root thml;]を[root /usr/share/nginx/html]に変更。
-
 	location ~ .php$ {
 	root /usr/share/nginx/html;
 	fastcgi_pass 127.0.0.1:9000;
